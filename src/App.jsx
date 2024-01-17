@@ -1,12 +1,14 @@
-import Footer from './components/Footer';
-import Header from './components/Header';
-import Hero from './components/Hero';
+import Hero from './components/hero/Hero';
+import Footer from './components/shared/Footer';
+import Header from './components/shared/Header';
+import TaskBoard from './components/task/TaskBoard';
 
 const App = () => {
   return (
     <>
       <Header />
       <Hero />
+      <TaskBoard />
       <Footer />
     </>
   );
