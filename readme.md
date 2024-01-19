@@ -1,6 +1,6 @@
 # Tasker
 
-![Tasker App Screenshot](../../assets/images/ss.png)
+![Tasker App Screenshot](src/assets/images/ss.png)
 
 ### A task management app built with react and tailwind
 
