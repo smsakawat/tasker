@@ -1,20 +1,28 @@
 import { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import SearchTask from './SearchTask';
 import TaskActions from './TaskActions';
 import TaskList from './TaskList';
 import TaskModal from './TaskModal';
 
 const TaskBoard = () => {
-  const defaultTask = {
-    id: crypto.randomUUID(),
-    title: 'Master React',
-    description:
-      'Master react like a pro as much as you can, you have to stand out from too many competitors, so you know better',
-    tags: ['web', 'react', 'js'],
+  const defaultTask1 = {
+    id: uuidv4(),
+    title: 'Hydration Reminder',
+    description: 'Drink a glass of water right now to stay hydrated.',
+    tags: ['Hydration', 'Wellness', 'Health'],
     priority: 'High',
     isFavorite: true,
   };
-  const [tasks, setTasks] = useState([defaultTask]);
+  const defaultTask2 = {
+    id: uuidv4(),
+    title: 'Digital Detox',
+    description: 'Take a 30-minute break from screens for mindfulness.',
+    tags: ['Detox', 'Rest', 'SelfCare'],
+    priority: 'High',
+    isFavorite: false,
+  };
+  const [tasks, setTasks] = useState([defaultTask1, defaultTask2]);
   const [modalOpen, setModalOpen] = useState(false);
   const [taskToUpdate, setTaskToUpdate] = useState(null);
 
