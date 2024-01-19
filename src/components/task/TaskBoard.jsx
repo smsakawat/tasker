@@ -6,23 +6,25 @@ import TaskList from './TaskList';
 import TaskModal from './TaskModal';
 
 const TaskBoard = () => {
-  const defaultTask1 = {
-    id: uuidv4(),
-    title: 'Hydration Reminder',
-    description: 'Drink a glass of water right now to stay hydrated.',
-    tags: ['Hydration', 'Wellness', 'Health'],
-    priority: 'High',
-    isFavorite: true,
-  };
-  const defaultTask2 = {
-    id: uuidv4(),
-    title: 'Digital Detox',
-    description: 'Take a 30-minute break from screens for mindfulness.',
-    tags: ['Detox', 'Rest', 'SelfCare'],
-    priority: 'High',
-    isFavorite: false,
-  };
-  const [tasks, setTasks] = useState([defaultTask1, defaultTask2]);
+  const initialTasks = [
+    {
+      id: uuidv4(),
+      title: 'Hydration Reminder',
+      description: 'Drink a glass of water right now to stay hydrated.',
+      tags: ['Hydration', 'Wellness', 'Health'],
+      priority: 'High',
+      isFavorite: true,
+    },
+    {
+      id: uuidv4(),
+      title: 'Digital Detox',
+      description: 'Take a 30-minute break from screens for mindfulness.',
+      tags: ['Detox', 'Rest', 'SelfCare'],
+      priority: 'High',
+      isFavorite: false,
+    },
+  ];
+  const [tasks, setTasks] = useState(initialTasks);
   const [modalOpen, setModalOpen] = useState(false);
   const [taskToUpdate, setTaskToUpdate] = useState(null);
 
