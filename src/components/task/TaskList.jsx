@@ -1,6 +1,6 @@
 import SingleTask from './SingleTask';
 
-const TaskList = ({ tasks, onEditTask, onDeleteTask }) => {
+const TaskList = ({ tasks, onEditTask, onDeleteTask, onFavoriteClick }) => {
   return (
     <div className="overflow-auto">
       <table className="table-fixed overflow-auto xl:w-full">
@@ -32,6 +32,7 @@ const TaskList = ({ tasks, onEditTask, onDeleteTask }) => {
                 task={task}
                 onEditTask={onEditTask}
                 onDeleteTask={onDeleteTask}
+                onFavoriteClick={onFavoriteClick}
               />
             );
           })}

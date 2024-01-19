@@ -62,6 +62,27 @@ const TaskBoard = () => {
     setTasks([...tasks]);
   };
 
+  // Handling favorite task
+  const handleFavoriteTask = taskId => {
+    setTasks(
+      tasks.map(task => {
+        if (task.id === taskId) {
+          return { ...task, isFavorite: !task.isFavorite };
+        }
+        return task;
+      })
+    );
+  };
+
+  // Search tasks
+  const handleTaskSearch = value => {
+    setTasks(
+      tasks.filter(task =>
+        task.title.toLowerCase().includes(value.trim().toLowerCase())
+      )
+    );
+  };
+
   return (
     <>
       <section className="mb-20" id="tasks">
@@ -73,7 +94,7 @@ const TaskBoard = () => {
           />
         )}
         <div className="container mx-auto">
-          <SearchTask />
+          <SearchTask onSearch={handleTaskSearch} />
           <div className="rounded-xl border border-[rgba(206,206,206,0.12)] bg-[#1D212B] px-6 py-8 md:px-9 md:py-16">
             <TaskActions
               tasks={tasks}
@@ -85,6 +106,7 @@ const TaskBoard = () => {
                 tasks={tasks}
                 onEditTask={handleEditTask}
                 onDeleteTask={handleDeleteTask}
+                onFavoriteClick={handleFavoriteTask}
               />
             ) : (
               <div className="w-full">

@@ -28,7 +28,7 @@ const TaskModal = ({ onSave, onClose, taskToUpdate }) => {
   };
   return (
     <>
-      <form className="mx-auto  w-full max-w-[680px] rounded-xl border border-[#FEFBFB]/[36%] bg-[#191D26] p-9 max-md:px-4  lg:p-11 absolute top-1/2 left-1/2 -translate-x-1/2 z-50 -translate-y-[20%]">
+      <form className="mx-auto  w-full max-w-[680px] rounded-xl border border-[#FEFBFB]/[36%] bg-[#191D26] p-9 max-md:px-4  lg:p-11 absolute left-1/2 -translate-x-1/2 z-50 bottom-[10%] translate-y-1/3">
         <h2 className="mb-9 text-center text-2xl font-bold text-white lg:mb-11 lg:text-[28px]">
           Add New Task
         </h2>

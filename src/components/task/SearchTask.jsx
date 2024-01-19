@@ -1,10 +1,11 @@
-const SearchTask = () => {
+const SearchTask = ({ onSearch }) => {
   return (
     <div className="p-2 flex justify-end">
       <form>
         <div className="flex">
           <div className="relative overflow-hidden rounded-lg text-gray-50 md:min-w-[380px] lg:min-w-[440px]">
             <input
+              onChange={e => onSearch(e.target.value)}
               type="search"
               id="search-dropdown"
               className="z-20 block w-full bg-gray-800 px-4 py-2 pr-10 focus:outline-none"

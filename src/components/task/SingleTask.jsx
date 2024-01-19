@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 import { FaStar } from 'react-icons/fa';
+
 // Getting random color for tags
 const getRandomColor = () => {
   const colors = [
@@ -16,7 +17,7 @@ const getRandomColor = () => {
   return colors[Math.floor(Math.random() * colors.length)];
 };
 
-const SingleTask = ({ task, onDeleteTask, onEditTask }) => {
+const SingleTask = ({ task, onDeleteTask, onEditTask, onFavoriteClick }) => {
   // Assigning random colors
   const tagColors = useMemo(() => {
     return task.tags.reduce((colors, tag) => {
@@ -26,16 +27,18 @@ const SingleTask = ({ task, onDeleteTask, onEditTask }) => {
   }, [task.tags]);
 
   return (
-    <tr
-      key={task.id}
-      className="border-b border-[#2E3443] [&>td]:align-baseline [&>td]:px-4 [&>td]:py-2"
-    >
+    <tr className="border-b border-[#2E3443] [&>td]:align-baseline [&>td]:px-4 [&>td]:py-2">
       <td>
-        {task.isFavorite ? (
-          <FaStar color="orange" size="1.15em" />
-        ) : (
-          <FaStar color="gray" />
-        )}
+        <button
+          className="cursor-pointer"
+          onClick={() => onFavoriteClick(task.id)}
+        >
+          {task.isFavorite ? (
+            <FaStar color="orange" size="1.15em" />
+          ) : (
+            <FaStar color="gray" />
+          )}
+        </button>
       </td>
       <td className="text-center">{task.title}</td>
       <td>
