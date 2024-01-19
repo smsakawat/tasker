@@ -1,16 +1,16 @@
 import { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 const TaskModal = ({ onSave, onClose, taskToUpdate }) => {
-  const [task, setTask] = useState(
-    taskToUpdate || {
-      id: crypto.randomUUID(),
-      title: '',
-      description: '',
-      tags: [],
-      priority: '',
-      isFavorite: false,
-    }
-  );
+  const emptyTask = {
+    id: uuidv4(),
+    title: '',
+    description: '',
+    tags: [],
+    priority: '',
+    isFavorite: false,
+  };
+  const [task, setTask] = useState(taskToUpdate || emptyTask);
   const [isAdd, setIsAdd] = useState(Object.is(taskToUpdate, null));
   const { title, description, tags, priority, isFavorite } = task;
 
@@ -82,9 +82,9 @@ const TaskModal = ({ onSave, onClose, taskToUpdate }) => {
                 required
               >
                 <option value="">Select Priority</option>
-                <option value="low">Low</option>
-                <option value="medium">Medium</option>
-                <option value="high">High</option>
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
               </select>
             </div>
           </div>
