@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "title": "Morning Stretch Routine",
+    "description": "Kickstart your day with a quick 10-minute morning stretch.",
+    "tags": ["Morning", "Wellness", "Exercise"],
+    "priority": "Medium",
+    "isFavorite": true
+  },
+  {
+    "id": 2,
+    "title": "Gratitude Journal",
+    "description": "Take a moment to enjoy things you're grateful for today.",
+    "tags": ["Gratitude", "Mindfulness", "SelfCare"],
+    "priority": "Low",
+    "isFavorite": false
+  },
+  {
+    "id": 3,
+    "title": "Mindful Breathing",
+    "description": "Practice mindful breathing for 5 minutes to center yourself.",
+    "tags": ["Mindfulness", "SelfCare", "Relaxation"],
+    "priority": "High",
+    "isFavorite": true
+  },
+  {
+    "id": 4,
+    "title": "Daily Reading",
+    "description": "Read a chapter of your favorite book to unwind.",
+    "tags": ["Reading", "Leisure", "SelfImprovement"],
+    "priority": "Medium",
+    "isFavorite": false
+  },
+  {
+    "id": 5,
+    "title": "Power Nap",
+    "description": "Take a 20-minute power nap for increased alertness.",
+    "tags": ["Rest", "Wellness", "Energy"],
+    "priority": "High",
+    "isFavorite": true
+  }
+]

@@ -15,6 +15,7 @@
 
 - Backend will be added in future.
 - Task data will be reset upon reloading the app.
+- Please note that the search feature is currently applied only to the default data as no db is attached.
 
 ### Live Demo
 
