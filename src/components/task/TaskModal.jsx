@@ -28,7 +28,7 @@ const TaskModal = ({ onSave, onClose, taskToUpdate }) => {
   };
   return (
     <>
-      <form className="mx-auto my-10 w-full max-w-[740px] rounded-xl border border-[#FEFBFB]/[36%] bg-[#191D26] p-9 max-md:px-4 lg:my-20 lg:p-11 absolute  top-0 inset-x-0 z-50">
+      <form className="mx-auto  w-full max-w-[680px] rounded-xl border border-[#FEFBFB]/[36%] bg-[#191D26] p-9 max-md:px-4  lg:p-11 absolute top-1/2 left-1/2 -translate-x-1/2 z-50 -translate-y-[20%]">
         <h2 className="mb-9 text-center text-2xl font-bold text-white lg:mb-11 lg:text-[28px]">
           Add New Task
         </h2>
@@ -111,7 +111,7 @@ const TaskModal = ({ onSave, onClose, taskToUpdate }) => {
           </button>
         </div>
       </form>
-      <div className="absolute w-full h-full  inset-0 bg-black/30 backdrop-blur z-20 overflow-hidden"></div>
+      <div className="absolute w-full h-[125%]  inset-0 bg-black/30 backdrop-blur z-20 overflow-hidden"></div>
     </>
   );
 };

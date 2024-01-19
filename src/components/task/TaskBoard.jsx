@@ -18,32 +18,37 @@ const TaskBoard = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [taskToUpdate, setTaskToUpdate] = useState(null);
 
+  // Handle Modal close
+  const handleModalClose = () => {
+    setTaskToUpdate(null);
+    setModalOpen(false);
+  };
+
   // Handle add task
   const handleAddTask = () => {
     setModalOpen(true);
   };
 
   // Handle edit
-  const handleEditClick = task => {
+  const handleEditTask = task => {
     setTaskToUpdate(task);
     setModalOpen(true);
   };
 
   // Handling add and edit task
   const handleAddEditTask = (newTask, isAdd) => {
-    console.log(newTask);
     if (isAdd) {
+      newTask.isFavorite = false;
       setTasks([...tasks, newTask]);
     } else {
       setTasks(
         tasks.map(task => {
-          if (task.id === newTask.id) return { ...newTask };
+          if (task.id === newTask.id) return newTask;
           return task;
         })
       );
-      setTaskToUpdate(null);
     }
-    setModalOpen(false);
+    handleModalClose();
   };
 
   // Handle task delete
@@ -57,10 +62,6 @@ const TaskBoard = () => {
     setTasks([...tasks]);
   };
 
-  // Handle Modal close
-  const handleModalClose = () => {
-    setModalOpen(false);
-  };
   return (
     <>
       <section className="mb-20" id="tasks">
@@ -75,14 +76,23 @@ const TaskBoard = () => {
           <SearchTask />
           <div className="rounded-xl border border-[rgba(206,206,206,0.12)] bg-[#1D212B] px-6 py-8 md:px-9 md:py-16">
             <TaskActions
+              tasks={tasks}
               onAddTask={handleAddTask}
               onDeleteAll={handleDeleteAllTask}
             />
-            <TaskList
-              tasks={tasks}
-              onEditClick={handleEditClick}
-              onDeleteTask={handleDeleteTask}
-            />
+            {tasks.length > 0 ? (
+              <TaskList
+                tasks={tasks}
+                onEditTask={handleEditTask}
+                onDeleteTask={handleDeleteTask}
+              />
+            ) : (
+              <div className="w-full">
+                <h2 className="text-4xl font-semibold text-slate-300 text-center">
+                  No Task Found. Please Add one.
+                </h2>
+              </div>
+            )}
           </div>
         </div>
       </section>
