@@ -1,8 +1,16 @@
-# React + Vite
+# Tasker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Tasker App Screenshot](src/assets/images/ss.png)
 
-Currently, two official plugins are available:
+### A task management app built with react and tailwind
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+#### Features
+
+- **Search:** Quickly find tasks using keywords.
+- **Favorite Tasks:** Mark tasks as favorites for quick access.
+- **Edit and Delete:** Easily modify or remove tasks.
+- **Dynamic Tags:** Categorize tasks dynamically for better organization.
+
+## Live Demo
+
+Check out [here](https://tasker-v2.vercel.app/)
