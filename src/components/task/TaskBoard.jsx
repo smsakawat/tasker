@@ -10,24 +10,24 @@ const TaskBoard = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [taskToUpdate, setTaskToUpdate] = useState(null);
 
-  // Handle Modal close
+  // Close modal
   const handleModalClose = () => {
     setTaskToUpdate(null);
     setModalOpen(false);
   };
 
-  // Handle add task
+  // Open modal on add task
   const handleAddTask = () => {
     setModalOpen(true);
   };
 
-  // Handle edit
+  // Handle edit click
   const handleEditTask = task => {
     setTaskToUpdate(task);
     setModalOpen(true);
   };
 
-  // Handling add and edit task
+  // Add and edit as task
   const handleAddEditTask = (newTask, isAdd) => {
     if (isAdd) {
       newTask.isFavorite = false;
@@ -43,7 +43,7 @@ const TaskBoard = () => {
     handleModalClose();
   };
 
-  // Handle task delete
+  // Delete a task
   const handleDeleteTask = taskId => {
     setTasks(tasks.filter(task => task.id !== taskId));
   };
@@ -54,7 +54,7 @@ const TaskBoard = () => {
     setTasks([...tasks]);
   };
 
-  // Handling favorite task
+  // Add favorite task
   const handleFavoriteTask = taskId => {
     setTasks(
       tasks.map(task => {
@@ -69,7 +69,7 @@ const TaskBoard = () => {
   // Search tasks
   const handleTaskSearch = value => {
     setTasks(
-      tasks.filter(task =>
+      TasksData.filter(task =>
         task.title.toLowerCase().includes(value.trim().toLowerCase())
       )
     );
